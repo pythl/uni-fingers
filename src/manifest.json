@@ -57,11 +57,16 @@
     /* 快应用特有相关 */
   },
   "mp-weixin": {
-    /* 微信小程序特有相关 */ "appid": "wx669c4e17df741503",
+    /* 微信小程序特有相关wx669c4e17df741503 */
+    "appid": "wx6f5804f59d70d349",
     "setting": {
-      "urlCheck": false
+      "urlCheck": true,
+      "es6": true,
+      "checkSiteMap": false
     },
-    "usingComponents": true
+    "usingComponents": true,
+    /* 开启分包懒加载*/
+    "lazyCodeLoading": "requiredComponents"
   },
   "mp-alipay": {
     "usingComponents": true

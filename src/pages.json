@@ -5,21 +5,28 @@
   "pages": [
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/index/index",
+      "path": "pages/ticket/index",
       "style": {
-        "navigationBarTitleText": "首页"
+        "navigationBarTitleText": ""
       }
     },
     {
       "path": "pages/shop/index",
       "style": {
-        "navigationBarTitleText": "商铺"
+        "navigationBarTitleText": "商家"
       }
     },
     {
       "path": "pages/me/index",
       "style": {
-        "navigationBarTitleText": "我的"
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "component/login/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
       }
     }
   ],
@@ -36,21 +43,21 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "iconPath": "static/image/tabbar/home_gray.png",
-        "selectedIconPath": "static/image/tabbar/home.png",
-        "text": "首页"
+        "pagePath": "pages/ticket/index",
+        "iconPath": "static/image/tabbar/ticket_gray.png",
+        "selectedIconPath": "static/image/tabbar/ticket.png",
+        "text": "抢劵"
       },
       {
         "pagePath": "pages/shop/index",
-        "iconPath": "static/image/tabbar/setting_gray.png",
-        "selectedIconPath": "static/image/tabbar/setting.png",
-        "text": "商铺"
+        "iconPath": "static/image/tabbar/shop_gray.png",
+        "selectedIconPath": "static/image/tabbar/shop.png",
+        "text": "商家"
       },
       {
         "pagePath": "pages/me/index",
-        "iconPath": "static/image/tabbar/my_gray.png",
-        "selectedIconPath": "static/image/tabbar/my.png",
+        "iconPath": "static/image/tabbar/me_gray.png",
+        "selectedIconPath": "static/image/tabbar/me.png",
         "text": "我的"
       }
     ]
@@ -80,5 +87,17 @@
         }
       ]
     }
-  ]
+  ],
+  //定义预加载
+  "preloadRule": {
+    //当访问到该路由的页面时，会顺带预加载对应的包(可以是主包，也可以是子包)
+    "packageA/pages/index": {
+      "network": "all",
+      "packages": ["__APP__"] //__APP__：标识预加载主包
+    },
+    "packageB/pages/index": {
+      "network": "all",
+      "packages": ["packageA"] //预加载A子包，预加载的包也可以是多个
+    }
+  }
 }

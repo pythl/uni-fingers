@@ -1,5 +1,5 @@
 <template>
-  <div class="shop">shop</div>
+  <div class="shop">商家页面</div>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
   components: {},
   props: {},
   data() {
-    return {}
+    return {};
   },
   computed: {},
   methods: {},
@@ -32,7 +32,7 @@ export default {
   // onPageScroll(event) {},
   // 页面处理函数--用户点击右上角分享
   // onShareAppMessage(options) {},
-} 
+};
 </script>
 
 <style scoped></style>
