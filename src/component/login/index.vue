@@ -9,10 +9,19 @@
       <view class="big-title">重庆市首届全民健身嘉年华</view>
       <view class="min-title">暨九龙坡区体育消费节</view>
     </view>
-    <view class="login-btn" hover-class="login-btn-hover" @click="login">
+
+    <button
+      class="login-btn"
+      plain
+      type=""
+      lang="zh-CN"
+      open-type="getPhoneNumber"
+      hover-class="login-btn-hover"
+      @getphonenumber="getphonenumber"
+    >
       <u-icon name="weixin-fill" color="#ffffff" size="34px" bold></u-icon>
-      <view class="txt">微信授权登录</view>
-    </view>
+      <text class="txt">微信授权登录</text>
+    </button>
     <image
       class="bottom-bg"
       src="https://static.daoba.com/consume/login_pic.png"
@@ -46,17 +55,8 @@ export default {
   },
   computed: {},
   methods: {
-    login() {
-      console.log("登录");
-
-      getUserInfo();
-      //   uni.getUserProfile({
-      //     desc: "授权头像/昵称以使用完整功能",
-      //     success: (res) => {
-      //       uni.hideLoading();
-      //       console.log(res);
-      //     },
-      //   });
+    getphonenumber(res) {
+      console.log(res);
     },
     navigateBack() {
       uni.navigateBack({
@@ -103,7 +103,7 @@ export default {
   }
   .title {
     text-align: center;
-    color: #ffffff;
+    color: $white;
     margin-top: -400rpx;
     .slogan {
       font-size: 48rpx;
@@ -122,13 +122,13 @@ export default {
   .login-btn {
     width: 520rpx;
     height: 110rpx;
-    border: 1px solid #ffffff;
+    border: 1px solid $white;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    color: #ffffff;
+    color: $white;
     border-radius: 100rpx;
     font-size: 32rpx;
     font-weight: bold;
@@ -136,11 +136,11 @@ export default {
     z-index: 100;
     top: 600rpx;
     .txt {
-      margin-left: 20rpx;
+      margin-left: 16rpx;
     }
   }
   .login-btn-hover {
-    background-color: #5497d2;
+    background-color: $hover7d2;
   }
   .bottom-bg {
     width: 100%;

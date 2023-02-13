@@ -26,12 +26,12 @@
       <view class="my-list">
         <view
           class="my-item"
-          v-for="item in myList"
+          v-for="(item, index) in myList"
           :key="item.id"
           hover-class="my-item-hove"
           hover-stay-time="100"
         >
-          <view class="row">
+          <view class="row" @click="handleMenuItem(item, index)">
             <text>{{ item.name }}</text>
             <u-icon name="arrow-right"></u-icon>
           </view>
@@ -52,10 +52,14 @@ export default {
       fullHeight: 0, //页面余下高度
       isLogin: false,
       myList: [
-        { id: 1, name: "我的消费券" },
-        { id: 2, name: "商家入驻" },
-        { id: 3, name: "我的店铺" },
-        { id: 4, name: "扫码核销" },
+        { id: 1, name: "我的消费券", path: "/pages/ticket/my-ticket/index" },
+        {
+          id: 2,
+          name: "商家入驻",
+          path: "/pages/business/join-business/index",
+        },
+        { id: 3, name: "我的店铺", path: "/pages/business/my-store/index" },
+        { id: 4, name: "扫码核销", path: "" },
       ],
     };
   },
@@ -82,6 +86,7 @@ export default {
   },
   computed: {},
   methods: {
+    //跳转登录界面
     handleLogin() {
       uni.navigateTo({
         url: "/component/login/index",
@@ -89,6 +94,28 @@ export default {
           console.log(res);
         },
       });
+    },
+    //
+    handleMenuItem(item, index) {
+      console.log(item);
+      switch (index) {
+        case 0:
+        case 1:
+        case 2:
+          uni.navigateTo({
+            url: item.path,
+          });
+          break;
+        case 3:
+          // 允许从相机和相册扫码
+          uni.scanCode({
+            success: function (res) {
+              console.log("条码类型：" + res.scanType);
+              console.log("条码内容：" + res.result);
+            },
+          });
+          break;
+      }
     },
   },
   watch: {},
@@ -122,7 +149,7 @@ export default {
 
   .bj {
     width: 100%;
-    height: 320rpx;
+    height: 380rpx;
     background: url("https://static.daoba.com/consume/banner.png");
     background-size: 100% 100%;
   }
@@ -132,7 +159,7 @@ export default {
     border-radius: 30rpx 30rpx 0 0;
     margin-top: -30rpx;
     position: relative;
-    background-color: #fff;
+    background-color: $white;
     // 头像
     .me-info {
       min-width: 210rpx;
@@ -153,14 +180,14 @@ export default {
         box-shadow: 3px 3px 9px 1px rgba(0, 0, 0, 0.2);
         border-radius: 100rpx;
         box-sizing: border-box;
-        background: #ececec;
+        background-color: #ececec;
         display: flex;
         justify-content: center;
         align-items: center;
         .avatar {
           width: 130rpx;
           height: 130rpx;
-          background-color: #ffffff;
+          background-color: $white;
           border-radius: 100rpx;
           box-sizing: border-box;
           display: flex;
@@ -175,23 +202,23 @@ export default {
         }
       }
       .name {
-        color: #333333;
+        color: $COL333;
         font-size: 28rpx;
         font-weight: bold;
       }
       .login-btn {
-        color: #333333;
+        color: $COL333;
         font-size: 32rpx;
         font-weight: bold;
       }
       .name-hover {
-        color: red;
+        color: $FFBC2B;
       }
     }
     //我的菜单
     .my-list {
       padding: 260rpx 30rpx 0;
-      color: #333333;
+      color: $COL333;
       .my-item {
         width: 100%;
         .row {

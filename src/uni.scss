@@ -14,6 +14,8 @@
 
 /* 颜色变量 */
 @import "uview-ui/theme.scss";
+// 引入公共scss变量文件
+@import "./static/css/variable.scss";
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;
 $uni-color-success: #4cd964;

@@ -1,14 +1,14 @@
 <template>
-  <div class="shop">商家页面</div>
+  <div class="my-store">my-store</div>
 </template>
 
 <script>
 export default {
-  name: "shop",
+  name: "my-store",
   components: {},
   props: {},
   data() {
-    return {};
+    return {}
   },
   computed: {},
   methods: {},
@@ -32,7 +32,7 @@ export default {
   // onPageScroll(event) {},
   // 页面处理函数--用户点击右上角分享
   // onShareAppMessage(options) {},
-};
+} 
 </script>
 
 <style scoped></style>

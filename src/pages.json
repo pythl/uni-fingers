@@ -7,11 +7,12 @@
     {
       "path": "pages/ticket/index",
       "style": {
-        "navigationBarTitleText": ""
+        "navigationBarTitleText": "抢劵",
+        "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/shop/index",
+      "path": "pages/business/index",
       "style": {
         "navigationBarTitleText": "商家"
       }
@@ -19,20 +20,45 @@
     {
       "path": "pages/me/index",
       "style": {
-        "navigationBarTitleText": ""
+        "navigationBarTitleText": "个人中心",
+        "navigationStyle": "custom"
       }
     },
     {
       "path": "component/login/index",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "用户登录",
         "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/ticket/my-ticket/index",
+      "style": {
+        "navigationBarTitleText": "我的消费券"
+      }
+    },
+    {
+      "path": "pages/business/join-business/index",
+      "style": {
+        "navigationBarTitleText": "商家入驻"
+      }
+    },
+    {
+      "path": "pages/business/my-store/index",
+      "style": {
+        "navigationBarTitleText": "我的店铺"
+      }
+    },
+    {
+      "path": "component/qrcode/index",
+      "style": {
+        "navigationBarTitleText": "qrcode"
       }
     }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
+    "navigationBarTitleText": "全民健身消费节",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
@@ -49,7 +75,7 @@
         "text": "抢劵"
       },
       {
-        "pagePath": "pages/shop/index",
+        "pagePath": "pages/business/index",
         "iconPath": "static/image/tabbar/shop_gray.png",
         "selectedIconPath": "static/image/tabbar/shop.png",
         "text": "商家"
